@@ -1,0 +1,29 @@
+name: Deploy Documentation
+
+# This triggers the action every time you push to the 'main' branch
+on:
+  push:
+    branches:
+      - main
+
+# Gives GitHub Actions permission to publish the site
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.x
+
+      - name: Install MkDocs Material theme
+        run: pip install mkdocs-material
+
+      - name: Build and Deploy to GitHub Pages
+        run: mkdocs gh-deploy --force
