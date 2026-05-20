@@ -6,7 +6,7 @@ Welcome to the central hub for all GVVSS operational manuals, system guides, and
 
 ## 📚 Available Documentation
 
-### [GVVSS Reports Portal – User Manual](document1/index.md)
+### [GVVSS Reports Portal – User Manual](document1/index.md) 
 Learn how to use the OCR Processing System. This guide covers:
 * Data capture at the store level (GVB/GVW/GVF & GVL/GVO/GVT)
 * Uploading scanned forms via the Reports Portal Interface
