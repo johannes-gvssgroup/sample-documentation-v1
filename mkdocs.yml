@@ -1,8 +1,41 @@
-site_name: GVVSS Documentation
+site_name: GVVSS Documentation Portal
+
 theme:
   name: material
+  # 1. UI Features: Top navigation, back-to-top button, and better search
+  features:
+    - navigation.tabs          # Moves top-level folders to a top menu bar
+    - navigation.sections      # Makes the sidebar look cleaner
+    - navigation.top           # Adds a "back to top" arrow when scrolling
+    - search.suggest           # Auto-suggests results as users type
+    - search.highlight         # Highlights the search term on the page
+  
+  # 2. Color Palette & Dark Mode Toggle
+  palette:
+    # Light mode settings
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo          # Change this to your company's main color (e.g., blue, red, teal)
+      accent: blue
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    # Dark mode settings
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
 
-# This builds your navigation sidebar!
+# 3. Markdown Power-Ups (Allows call-out boxes and advanced formatting)
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
+# Your Navigation Menu
 nav:
   - Home: index.md
-  - ocr-system: ocr-system/index.md
+  - GVVSS Reports Portal: ocr-system/index.md

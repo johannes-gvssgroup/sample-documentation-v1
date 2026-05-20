@@ -137,3 +137,9 @@ After OCR conversion, the reviewer verifies the output and finalizes the data tr
 
 * **Technical Concerns (Demian):** Handles all system-related issues, including technical errors, malfunctions, and system hang incidents.
 * **Operational Workflow (Joseph):** Handles requests related to process adjustments, user access, and enhancement requirements for the system.
+
+!!! note "Quick Tip"
+    Scanned photos must be vertical, have readable handwriting, and adequate lighting for the OCR to work perfectly!
+
+!!! warning "Escalation Notice"
+    Do not escalate an issue until you have clicked the **Rerun** button first.
