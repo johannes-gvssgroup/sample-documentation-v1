@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # Welcome to the GVVSS Documentation Portal
 
 Welcome to the central hub for all GVVSS operational manuals, system guides, and process documentation. Use this portal to find step-by-step instructions for our internal systems and workflows.

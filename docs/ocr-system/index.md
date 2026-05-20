@@ -1,3 +1,7 @@
+---
+hide:
+  - navigation
+---
 # GVVSS Reports Portal – User Manual
 ## Version 1.0 : 12-2025
 **Scope:** This manual provides step-by-step instructions on how to use the GVVSS OCR Processing System, from capturing data at the store level to uploading files, reviewing OCR output, and triggering data consolidation.
@@ -54,8 +58,13 @@ After receiving the scanned photos from store staff, the uploader transfers them
     * Super user or Dev users can access all stores regardless of state.
 4. In the upload interface:
     * Select the **Store Code**.
+![Select Store Code](files/image/1.jpg)
+
     * Choose the **Form Type** that corresponds to the scanned files you are uploading.
+![Select Form Type](files/image/2.jpg)
+
 5. Click **"UPLOAD"** for the system to commence the OCR processing of the uploaded scan images.
+![Click Upload](files/image/3.jpg)
 
 ### Step 3: OCR Processing - Automated
 * **Responsibility:** System (Google Apps Script)
@@ -70,6 +79,7 @@ Once files are uploaded, the system automatically processes the images.
 
 **Files Awaiting Conversion:**
 Users will see the files that are being converted in the "Files Awaiting Conversion" section. No action is required from the user for this step. Each scanned file takes about 20 minutes to process.
+![Files Awaiting Conversion](files/image/4.jpg)
 
 ### Step 4: Data Integration (Files in Interim)
 * **Responsibility:** Reviewer (GM)
@@ -78,6 +88,9 @@ Users will see the files that are being converted in the "Files Awaiting Convers
 After OCR conversion, the reviewer verifies the output and finalizes the data transfer into the Action Item master sheet.
 
 **Files In Interim (Column Definitions):**
+*(...your list of definitions like Approve, Reruns, Store, etc...)*
+* **Flag:** Used to document details when escalating valid system-related issues; details are sent immediately to Support Contacts.
+![Files in Interim](files/image/5.jpg)
 * **Approve:** (Trigger Integration Button) Triggers the system to transfer all verified entries into the Action Item Database for tracking and reporting. 
 * **Reruns:** Displays the version history of the processed Google Sheets. This allows reviewers to compare results whenever a “Rerun” is executed. 
 * **Store:** The chosen store during the initial upload process.
@@ -92,6 +105,7 @@ After OCR conversion, the reviewer verifies the output and finalizes the data tr
 
 **Procedure:**
 1. Open the processed Google Sheets files by clicking on **"Sheet"**.
+![Click Sheet](files/image/6.jpg)
 2. Review for minor OCR errors (typographical misreads, formatting issues).
 3. Make necessary corrections that are considered "Not a System Error". *(Refer to the Escalation Guidelines to know what constitutes a non-system error).*
 4. For any “Valid System Issue” (as defined in Escalation Guidelines), first click **"Rerun"** to trigger the system to reprocess the scanned image.
