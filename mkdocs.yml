@@ -1,0 +1,9 @@
+site_name: My Personal Documentation
+theme:
+  name: material
+
+# This builds your navigation sidebar!
+nav:
+  - Home: index.md
+  - Document 1: document1/index.md
+  - Document 2: document2/index.md
