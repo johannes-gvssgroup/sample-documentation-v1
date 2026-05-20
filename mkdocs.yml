@@ -5,4 +5,4 @@ theme:
 # This builds your navigation sidebar!
 nav:
   - Home: index.md
-  - Document 1: ocr-system/index.md
+  - ocr-system: ocr-system/index.md
