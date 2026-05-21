@@ -1,8 +1,3 @@
----
-hide:
-  - navigation
----
-
 # 🚀 Welcome to the GVVSS Documentation Portal
 
 Welcome to the central knowledge base for GVVSS internal systems. This portal provides standardized, step-by-step documentation for all operational workflows, custom applications, and automation scripts.

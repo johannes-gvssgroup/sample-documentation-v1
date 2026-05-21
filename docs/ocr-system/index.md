@@ -1,7 +1,3 @@
----
-hide:
-  - navigation
----
 # GVVSS Reports Portal – User Manual
 ## Version 1.0 : 12-2025
 !!! note "Quick Tip"
