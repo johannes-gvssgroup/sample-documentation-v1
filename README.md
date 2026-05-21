@@ -1,40 +1,51 @@
-# 🚀 GVVSS Documentation Portal
+# 🚀 GVVSS Documentation Portal Repository
 
-This repository contains the source code and Markdown files for the **GVVSS Documentation Portal**. It is built using a "Docs-as-Code" methodology, meaning our operational manuals and system guides are version-controlled, peer-reviewed, and deployed exactly like software.
+This repository contains the source code for the **GVVSS Documentation Portal**. 
 
-## 🌐 Live Website
-**[Link to your live GitHub Pages URL here]**
+It uses a **"Docs-as-Code"** pipeline. Our operational manuals are version-controlled, peer-reviewed, and deployed automatically via GitHub Actions, ensuring our team always has access to the most up-to-date procedures.
 
-## ⚙️ Tech Stack
-This portal relies on a fully automated CI/CD pipeline. You do not need to manually write HTML or manage web hosting.
-* **[MkDocs](https://www.mkdocs.org/):** The core static site generator that translates our text into web pages.
-* **[Material for MkDocs](https://squidfunk.github.io/mkdocs-material/):** The modern, responsive UI theme featuring dark mode and advanced search.
-* **[GitHub Actions](https://github.com/features/actions):** The automation engine that builds and deploys the site whenever a change is saved.
-* **[Mike](https://github.com/jimporter/mike):** The versioning tool that manages our version dropdown (e.g., v1.0, v2.0) and archives old manuals.
+## 🌐 Live Website Links
+* **Portal Link:** [https://johannes-gvssgroup.github.io/sample-documentation-v1/](https://johannes-gvssgroup.github.io/sample-documentation-v1/)
+* **Version:** 1.0 (Latest)
+
+---
+
+## ⚙️ How the System Works
+You do not need to know HTML to update the website. The pipeline handles everything:
+1. **Write:** You write your manual using simple Markdown (`.md`) files.
+2. **Push:** You save (commit) your changes to the `main` branch.
+3. **Deploy:** GitHub Actions uses **MkDocs Material** to automatically convert your text into a styled web page and updates the live site.
 
 ## 📂 Repository Structure
-* `mkdocs.yml`: The master configuration file. This controls the site name, color theme, and the left-sidebar navigation menu.
-* `.github/workflows/deploy.yml`: The automation script that tells GitHub how to build the site.
-* `docs/`: The main directory containing all the raw Markdown (`.md`) files and images. **All content goes here.**
+* `mkdocs.yml`: The main settings file. Edit this to change colors, logos, or the top menu.
+* `.github/workflows/deploy.yml`: The automation script that builds the site.
+* `docs/`: The main folder. **All of your manuals, templates, and images live here.**
 
-## ✍️ How to Update the Documentation
+---
 
-Updating the live website requires zero coding knowledge. 
+## ✍️ How to Add or Edit Documentation
 
-1. Navigate to the `docs/` folder.
-2. Edit the relevant `.md` file, or create a new one using the standard template.
-3. Drop any required images into the respective `files/image/` folder.
-4. If you created a *new* file, open `mkdocs.yml` and add it to the `nav:` section.
-5. **Commit and Push** your changes to the `main` branch.
+1. Open the `docs/` folder in GitHub.
+2. To edit an existing guide, click on the file (e.g., `docs/ocr-system/index.md`) and click the pencil icon to edit. 
+3. To create a new guide, create a new folder, copy the text from `docs/template/index.md`, and fill it out.
+4. Drop any screenshots into your folder (e.g., `docs/ocr-system/files/image/1.jpg`).
+5. If you created a brand new page, open `mkdocs.yml` and add the link under the `nav:` section so it shows up in the menu.
+6. **Commit your changes.** The website will automatically update in 1-2 minutes.
 
-As soon as you push your changes, GitHub Actions will automatically wake up, rebuild the website, and publish the update to the live URL within 1–2 minutes.
+---
 
-## 💻 Local Development (For System Admins)
-If you need to make massive structural changes and want to preview the site on your local computer before pushing it to the live server, run the following commands in your terminal:
+## 🔄 Versioning Guide (For Admins)
 
-```bash
-# Install the required Python packages
-pip install mkdocs-material mike
+We use a tool called **`mike`** to handle version control. This creates the version dropdown menu in the top right corner of the live website.
 
-# Start the local live-reload server
-mkdocs serve
+### For Daily Edits (Status Quo)
+Do not change the version number! Just edit the `.md` files and push to GitHub. The system will overwrite the current `1.0` folder with your new edits automatically.
+
+### For Major Process Changes (Releasing a new version)
+If GVVSS changes a massive process and we want to archive the old `1.0` rules forever, we release a new version.
+1. Open `.github/workflows/deploy.yml`.
+2. Find the deployment command at the very bottom:
+   `mike deploy --push --update-aliases 1.0 latest`
+3. Change `1.0` to `1.1` (or `2.0`).
+4. Commit and push.
+5. The system will freeze the old folder forever, create a brand new `1.1` folder, and update the website's dropdown menu so users can toggle between the old and new rules.
