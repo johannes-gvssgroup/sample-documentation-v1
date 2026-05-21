@@ -877,24 +877,30 @@ Each store fills out the standard printed forms used for weekly operations monit
 </ul>
 <p><strong>Description:</strong>
 After receiving the scanned photos from store staff, the uploader transfers them into the OCR system through the Reports Portal Interface.</p>
-<p><strong>Process:</strong>
-1. <strong>Verify each scanned file:</strong> Ensure correct file format (JPG/PNG), store branch, and form type.
-2. Go to the <a href="https://gvss.demian.app/actionitem_upload">Reports Portal Interface</a>.
-3. The system interprets user credentials from the email address utilized when opening the Reports Portal Interface.
-    * The system auto-validates user access.
-    * The system automatically sets the state for users with GM-level access, while staff granted upload permissions are automatically assigned their respective store code. 
-    * A GM designated at the state level is granted access to all stores under that state.
-    * Super user or Dev users can access all stores regardless of state.
-4. In the upload interface:
-    * Select the <strong>Store Code</strong>.
-<img alt="Select Store Code" src="files/image/1.jpg" /></p>
+<p><strong>Process:</strong></p>
+<ol>
+<li><strong>Verify each scanned file:</strong> Ensure correct file format (JPG/PNG), store branch, and form type.</li>
+<li>Go to the <a href="https://gvss.demian.app/actionitem_upload">Reports Portal Interface</a>.</li>
+<li>The system interprets user credentials from the email address utilized when opening the Reports Portal Interface.<ul>
+<li>The system auto-validates user access.</li>
+<li>The system automatically sets the state for users with GM-level access, while staff granted upload permissions are automatically assigned their respective store code. </li>
+<li>A GM designated at the state level is granted access to all stores under that state.</li>
+<li>Super user or Dev users can access all stores regardless of state.</li>
+</ul>
+</li>
+<li>In the upload interface:<ul>
+<li>Select the <strong>Store Code</strong>.</li>
+</ul>
+</li>
+</ol>
+<p><img alt="Select Store Code" src="files/image/1.jpg" /></p>
 <pre><code>* Choose the **Form Type** that corresponds to the scanned files you are uploading.
 </code></pre>
 <p><img alt="Select Form Type" src="files/image/2.jpg" /></p>
 <ol>
-<li>Click <strong>"UPLOAD"</strong> for the system to commence the OCR processing of the uploaded scan images.
-<img alt="Click Upload" src="files/image/3.jpg" /></li>
+<li>Click <strong>"UPLOAD"</strong> for the system to commence the OCR processing of the uploaded scan images.</li>
 </ol>
+<p><img alt="Click Upload" src="files/image/3.jpg" /></p>
 <h3 id="step-3-ocr-processing-automated">Step 3: OCR Processing - Automated</h3>
 <ul>
 <li><strong>Responsibility:</strong> System (Google Apps Script)</li>
@@ -906,8 +912,8 @@ Once files are uploaded, the system automatically processes the images. </p>
 2. Google Drive OCR converts each image into a Google Sheet containing extracted text.
 3. Google Apps Script automates: file detection, conversion, and storing results in <code>/OCR Output</code>.</p>
 <p><strong>Files Awaiting Conversion:</strong>
-Users will see the files that are being converted in the "Files Awaiting Conversion" section. No action is required from the user for this step. Each scanned file takes about 20 minutes to process.
-<img alt="Files Awaiting Conversion" src="files/image/4.jpg" /></p>
+Users will see the files that are being converted in the "Files Awaiting Conversion" section. No action is required from the user for this step. Each scanned file takes about 20 minutes to process.</p>
+<p><img alt="Files Awaiting Conversion" src="files/image/4.jpg" /></p>
 <h3 id="step-4-data-integration-files-in-interim">Step 4: Data Integration (Files in Interim)</h3>
 <ul>
 <li><strong>Responsibility:</strong> Reviewer (GM)</li>
@@ -916,28 +922,36 @@ Users will see the files that are being converted in the "Files Awaiting Convers
 After OCR conversion, the reviewer verifies the output and finalizes the data transfer into the Action Item master sheet.</p>
 <p><strong>Files In Interim (Column Definitions):</strong>
 <em>(...your list of definitions like Approve, Reruns, Store, etc...)</em>
-* <strong>Flag:</strong> Used to document details when escalating valid system-related issues; details are sent immediately to Support Contacts.
-<img alt="Files in Interim" src="files/image/5.jpg" />
-* <strong>Approve:</strong> (Trigger Integration Button) Triggers the system to transfer all verified entries into the Action Item Database for tracking and reporting. 
-* <strong>Reruns:</strong> Displays the version history of the processed Google Sheets. This allows reviewers to compare results whenever a “Rerun” is executed. 
-* <strong>Store:</strong> The chosen store during the initial upload process.
-* <strong>Report Type:</strong> Shows the form type selected during the initial upload process.
-* <strong>OCR Timestamp:</strong> Records the exact date and time when the scanned image file was uploaded and processed through OCR.
-* <strong>Original Filename:</strong> Displays the exact file name of the uploaded image.
-* <strong>Image:</strong> Contains a copy of the scanned image for reference during review.
-* <strong>Sheet:</strong> Links to the processed Google Sheet that reviewers should verify prior to clicking “Approve". 
-* <strong>Rerun:</strong> Reprocesses the scanned file and generates a new version of the processed Google Sheet. Similar to the initial OCR processing, this requires approximately 20 minutes. 
-* <strong>Reject:</strong> Once selected, this disables the “Approve,” “Sheet,” “Rerun,” and “Flag” buttons, indicating that the record will not proceed for processing.
 * <strong>Flag:</strong> Used to document details when escalating valid system-related issues; details are sent immediately to Support Contacts.</p>
+<p><img alt="Files in Interim" src="files/image/5.jpg" /></p>
+<ul>
+<li><strong>Approve:</strong> (Trigger Integration Button) Triggers the system to transfer all verified entries into the Action Item Database for tracking and reporting. </li>
+<li><strong>Reruns:</strong> Displays the version history of the processed Google Sheets. This allows reviewers to compare results whenever a “Rerun” is executed. </li>
+<li><strong>Store:</strong> The chosen store during the initial upload process.</li>
+<li><strong>Report Type:</strong> Shows the form type selected during the initial upload process.</li>
+<li><strong>OCR Timestamp:</strong> Records the exact date and time when the scanned image file was uploaded and processed through OCR.</li>
+<li><strong>Original Filename:</strong> Displays the exact file name of the uploaded image.</li>
+<li><strong>Image:</strong> Contains a copy of the scanned image for reference during review.</li>
+<li><strong>Sheet:</strong> Links to the processed Google Sheet that reviewers should verify prior to clicking “Approve". </li>
+<li><strong>Rerun:</strong> Reprocesses the scanned file and generates a new version of the processed Google Sheet. Similar to the initial OCR processing, this requires approximately 20 minutes. </li>
+<li><strong>Reject:</strong> Once selected, this disables the “Approve,” “Sheet,” “Rerun,” and “Flag” buttons, indicating that the record will not proceed for processing.</li>
+<li><strong>Flag:</strong> Used to document details when escalating valid system-related issues; details are sent immediately to Support Contacts.</li>
+</ul>
 <p><strong>Procedure:</strong>
-1. Open the processed Google Sheets files by clicking on <strong>"Sheet"</strong>.
-<img alt="Click Sheet" src="files/image/6.jpg" />
-2. Review for minor OCR errors (typographical misreads, formatting issues).
-3. Make necessary corrections that are considered "Not a System Error". <em>(Refer to the Escalation Guidelines to know what constitutes a non-system error).</em>
-4. For any “Valid System Issue” (as defined in Escalation Guidelines), first click <strong>"Rerun"</strong> to trigger the system to reprocess the scanned image.
-    * If the issue persists or worsens after the Rerun, click <strong>Flag</strong> to formally escalate the problem to the designated Support Contacts. Select <strong>Confirm Flag</strong> to finalize the escalation. 
-5. Click <strong>Approve</strong> (Trigger Integration) for processed Google Sheets that are not flagged.
-    * The system transfers all verified entries into the Action Item Database (Jordan) for tracking and reporting.</p>
+1. Open the processed Google Sheets files by clicking on <strong>"Sheet"</strong>.</p>
+<p><img alt="Click Sheet" src="files/image/6.jpg" /></p>
+<ol>
+<li>Review for minor OCR errors (typographical misreads, formatting issues).</li>
+<li>Make necessary corrections that are considered "Not a System Error". <em>(Refer to the Escalation Guidelines to know what constitutes a non-system error).</em></li>
+<li>For any “Valid System Issue” (as defined in Escalation Guidelines), first click <strong>"Rerun"</strong> to trigger the system to reprocess the scanned image.<ul>
+<li>If the issue persists or worsens after the Rerun, click <strong>Flag</strong> to formally escalate the problem to the designated Support Contacts. Select <strong>Confirm Flag</strong> to finalize the escalation. </li>
+</ul>
+</li>
+<li>Click <strong>Approve</strong> (Trigger Integration) for processed Google Sheets that are not flagged.<ul>
+<li>The system transfers all verified entries into the Action Item Database (Jordan) for tracking and reporting.</li>
+</ul>
+</li>
+</ol>
 <hr />
 <h2 id="c-roles-responsibilities">C. Roles &amp; Responsibilities</h2>
 <table>
