@@ -3,13 +3,18 @@ site_name: GVVSS Documentation Portal
 theme:
   name: material
   custom_dir: overrides
-  # 1. UI Features: Top navigation, back-to-top button, and better search
+  logo: material/shield-check     # Changes the top-left logo
+  favicon: material/shield-check  # Changes the browser tab icon
+  # 1. UI Features
   features:
     - navigation.tabs          # Moves top-level folders to a top menu bar
     - navigation.sections      # Makes the sidebar look cleaner
     - navigation.top           # Adds a "back to top" arrow when scrolling
+    - navigation.tracking      # NEW: Shows a circular scroll progress bar
+    - navigation.footer        # NEW: Adds Next/Previous buttons at the bottom of pages
     - search.suggest           # Auto-suggests results as users type
     - search.highlight         # Highlights the search term on the page
+    - content.code.copy        # NEW: Adds a "Copy" button to code blocks
   
   # 2. Color Palette & Dark Mode Toggle
   palette:
@@ -40,6 +45,13 @@ markdown_extensions:
 extra:
   version:
     provider: mike
+
+# 5. Plugins (Adds the "Last Updated" timestamp)
+plugins:
+  - search
+  - git-revision-date-localized:
+      enable_creation_date: false
+      type: date
 
 # Your Navigation Menu
 nav:
