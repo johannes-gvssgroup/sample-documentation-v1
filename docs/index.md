@@ -25,7 +25,7 @@ This website is not a standard Google Site or WordPress page. It is built using 
 
 In a regulated environment, it is critical to know what the rules were on any given day. This portal uses an automated versioning tool to freeze old documentation.
 
-* **The Version Dropdown:** Look at the top right corner of this screen (next to the search bar). You will see a dropdown menu labeled with our current version (e.g., **1.0 (latest)**).
+* **The Version Dropdown:** Look at the top right corner of this screen (next to the search bar). You will see a dropdown menu labeled with our current version (e.g., **1.1 (latest)**).
 * **Daily Updates:** For typos, minor edits, or new pages, the system stays on the current version. 
 * **Major Changes:** When a massive process change occurs (like replacing the OCR system entirely), the IT team will release version **1.1** or **2.0**. The old version is permanently frozen and archived. You can use the dropdown menu at any time to travel back and read the old rules!
 

@@ -6,7 +6,7 @@ It uses a **"Docs-as-Code"** pipeline. Our operational manuals are version-contr
 
 ## 🌐 Live Website Links
 * **Portal Link:** [https://johannes-gvssgroup.github.io/sample-documentation-v1/](https://johannes-gvssgroup.github.io/sample-documentation-v1/)
-* **Version:** 1.0 (Latest)
+* **Version:** 1.1 (Latest)
 
 ---
 
