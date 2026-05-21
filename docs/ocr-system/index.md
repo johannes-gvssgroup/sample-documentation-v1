@@ -31,7 +31,7 @@ This manual covers the four main phases of the workflow:
 
 ## B. Step-by-Step Process
 
-### Step 1: Data Capture
+### Step 1: Data Capture 
 * **Responsibility:** Store Staff (PA: GVB/GVW/GVF | FL: GVL/GVO/GVT)
 
 **Description:**
@@ -54,6 +54,7 @@ Each store fills out the standard printed forms used for weekly operations monit
 After receiving the scanned photos from store staff, the uploader transfers them into the OCR system through the Reports Portal Interface.
 
 **Process:**
+
 1. **Verify each scanned file:** Ensure correct file format (JPG/PNG), store branch, and form type.
 2. Go to the [Reports Portal Interface](https://gvss.demian.app/actionitem_upload).
 3. The system interprets user credentials from the email address utilized when opening the Reports Portal Interface.
@@ -63,12 +64,14 @@ After receiving the scanned photos from store staff, the uploader transfers them
     * Super user or Dev users can access all stores regardless of state.
 4. In the upload interface:
     * Select the **Store Code**.
+
 ![Select Store Code](files/image/1.jpg)
 
     * Choose the **Form Type** that corresponds to the scanned files you are uploading.
 ![Select Form Type](files/image/2.jpg)
 
 5. Click **"UPLOAD"** for the system to commence the OCR processing of the uploaded scan images.
+
 ![Click Upload](files/image/3.jpg)
 
 ### Step 3: OCR Processing - Automated
@@ -84,6 +87,7 @@ Once files are uploaded, the system automatically processes the images.
 
 **Files Awaiting Conversion:**
 Users will see the files that are being converted in the "Files Awaiting Conversion" section. No action is required from the user for this step. Each scanned file takes about 20 minutes to process.
+
 ![Files Awaiting Conversion](files/image/4.jpg)
 
 ### Step 4: Data Integration (Files in Interim)
@@ -95,7 +99,9 @@ After OCR conversion, the reviewer verifies the output and finalizes the data tr
 **Files In Interim (Column Definitions):**
 *(...your list of definitions like Approve, Reruns, Store, etc...)*
 * **Flag:** Used to document details when escalating valid system-related issues; details are sent immediately to Support Contacts.
+
 ![Files in Interim](files/image/5.jpg)
+
 * **Approve:** (Trigger Integration Button) Triggers the system to transfer all verified entries into the Action Item Database for tracking and reporting. 
 * **Reruns:** Displays the version history of the processed Google Sheets. This allows reviewers to compare results whenever a “Rerun” is executed. 
 * **Store:** The chosen store during the initial upload process.
@@ -110,7 +116,9 @@ After OCR conversion, the reviewer verifies the output and finalizes the data tr
 
 **Procedure:**
 1. Open the processed Google Sheets files by clicking on **"Sheet"**.
+
 ![Click Sheet](files/image/6.jpg)
+
 2. Review for minor OCR errors (typographical misreads, formatting issues).
 3. Make necessary corrections that are considered "Not a System Error". *(Refer to the Escalation Guidelines to know what constitutes a non-system error).*
 4. For any “Valid System Issue” (as defined in Escalation Guidelines), first click **"Rerun"** to trigger the system to reprocess the scanned image.
