@@ -28,7 +28,6 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Deploy with mike
-        # This builds version "1.0" and tags it as the "latest" version
         run: |
-          mike deploy --push --update-aliases 1.0 latest
+          mike deploy --push --update-aliases 1.1 latest
           mike set-default --push latest
