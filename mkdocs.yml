@@ -2,6 +2,7 @@ site_name: GVVSS Documentation Portal
 
 theme:
   name: material
+  custom_dir: overrides
   # 1. UI Features: Top navigation, back-to-top button, and better search
   features:
     - navigation.tabs          # Moves top-level folders to a top menu bar
