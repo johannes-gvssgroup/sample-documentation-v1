@@ -2,36 +2,40 @@
 hide:
   - navigation
 ---
-# Welcome to the GVVSS Documentation Portal
 
-Welcome to the central hub for all GVVSS operational manuals, system guides, and process documentation. Use this portal to find step-by-step instructions for our internal systems and workflows.
+# 🚀 Welcome to the GVVSS Documentation Portal
 
----
+Welcome to the central knowledge base for GVVSS internal systems. This portal provides standardized, step-by-step documentation for all operational workflows, custom applications, and automation scripts.
 
-## 📚 Available Documentation
-
-### [GVVSS Reports Portal – User Manual](ocr-system/index.md) 
-Learn how to use the OCR Processing System. This guide covers:
-* Data capture at the store level (GVB/GVW/GVF & GVL/GVO/GVT)
-* Uploading scanned forms via the Reports Portal Interface
-* Reviewing automated OCR outputs and triggering data integration
-* Troubleshooting common upload and conversion issues
-
-### [Escalation Guidelines](escalation-guidelines/index.md)
-*(Note: This link will be active once the escalation-guidelines folder is created)*
-Review the standard protocols for handling system errors versus non-system errors, and understand when to flag issues for support.
+Our goal is to ensure seamless handoffs between technical development, BPO operations, and executive oversight in a regulated environment.
 
 ---
 
-## 🛠️ Quick Links
-* **Production Website:** [GVVSS Action Item Upload](https://gvss.demian.app/actionitem_upload)
-* **Video Tutorials:** [OCR System Demo](https://docs.google.com/videos/d/1S9fyndRS4hRe6HFHPSs33uPg6lh3FgjwCvrVpL77dH8/edit?usp=sharing)
+## 📚 Official Guides & Manuals
+
+### [GVVSS Reports Portal (OCR System)](ocr-system/index.md)
+The primary user manual for uploading, processing, and validating store-level scanned forms (GVB/GVW/GVF & GVL/GVO/GVT) through our automated OCR pipeline.
+
+### [OCR Google Apps Script Setup](ocr-google-script/index.md)
+Technical setup guide for deploying the backend Google Apps Script that powers the OCR processing out of Google Drive. 
+
+### [Standard Documentation Template](template/index.md)
+The blueprint for creating new documentation. All future apps, scripts, and workflows must be documented using this standard format.
 
 ---
 
-## 📞 Support Contacts
+## 🔄 Version History & Archives
 
-If you encounter an issue that is not covered in the documentation above, please reach out to the appropriate contact:
+As our systems evolve, old documentation is preserved for audit and rollback purposes. 
 
-* **Technical Concerns (Demian):** For system malfunctions, portal access issues, or system hang incidents.
-* **Operational Workflow (Joseph):** For process adjustments, user access approvals, or enhancement requests.
+* **Current Version:** `v1.0` (Latest Stable)
+* **Previous Versions:** *(Versioning system implementation pending - check back soon!)*
+
+---
+
+## 📞 Escalation & Support
+
+If you encounter an undocumented error, please follow the standard escalation path:
+1. **L1 (BPO/Operations):** Attempt documented error-handling steps.
+2. **L2 (Technical):** Flag issues with Demian via the Portal for system hangs or API failures.
+3. **L3 (Ops/Exec):** Escalate to Joseph for process adjustments or workflow changes.

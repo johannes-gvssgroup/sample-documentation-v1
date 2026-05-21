@@ -35,7 +35,14 @@ markdown_extensions:
   - pymdownx.details
   - pymdownx.superfences
 
+# 4. Versioning Dropdown (Powered by mike)
+extra:
+  version:
+    provider: mike
+
 # Your Navigation Menu
 nav:
   - Home: index.md
+  - template: template/index.md
   - GVVSS Reports Portal: ocr-system/index.md
+  - GVVSS OCR Google Script: ocr-google-script/index.md

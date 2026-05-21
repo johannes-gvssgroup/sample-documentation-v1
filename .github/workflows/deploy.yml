@@ -1,29 +1,34 @@
 name: Deploy Documentation
 
-# This triggers the action every time you push to the 'main' branch
 on:
   push:
     branches:
       - main
 
-# Gives GitHub Actions permission to publish the site
-permissions:
-  contents: write
-
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # CRITICAL: mike needs the full git history to work
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: 3.x
 
-      - name: Install MkDocs Material theme
-        run: pip install mkdocs-material
+      - name: Install dependencies
+        run: pip install mkdocs-material mike
 
-      - name: Build and Deploy to GitHub Pages
-        run: mkdocs gh-deploy --force
+      - name: Configure Git Credentials
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Deploy with mike
+        # This builds version "1.0" and tags it as the "latest" version
+        run: |
+          mike deploy --push --update-aliases 1.0 latest
+          mike set-default --push latest
